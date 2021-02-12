@@ -1,0 +1,7 @@
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\bin\Debug\DeterminantNet.dll
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\bin\Debug\DeterminantNet.pdb
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\bin\Debug\Intel.Realsense.dll
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\obj\Debug\DeterminantNet.csproj.CoreCompileInputs.cache
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\obj\Debug\DeterminantNet.csproj.CopyComplete
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\obj\Debug\DeterminantNet.dll
+C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\obj\Debug\DeterminantNet.pdb
