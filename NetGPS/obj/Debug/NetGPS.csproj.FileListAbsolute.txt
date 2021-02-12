@@ -4,3 +4,8 @@ C:\Users\Stack\Desktop\NMEA_GPS-master\NetGPS\bin\Debug\NetGPS.pdb
 C:\Users\Stack\Desktop\NMEA_GPS-master\NetGPS\obj\Debug\NetGPS.dll
 C:\Users\Stack\Desktop\NMEA_GPS-master\NetGPS\obj\Debug\NetGPS.pdb
 C:\Users\Stack\Desktop\NMEA_GPS-master\NetGPS\obj\Debug\NetGPS.csprojAssemblyReference.cache
+C:\Users\Stack\Desktop\result libs\NetGPS\bin\Debug\NetGPS.dll
+C:\Users\Stack\Desktop\result libs\NetGPS\bin\Debug\NetGPS.pdb
+C:\Users\Stack\Desktop\result libs\NetGPS\obj\Debug\NetGPS.csproj.CoreCompileInputs.cache
+C:\Users\Stack\Desktop\result libs\NetGPS\obj\Debug\NetGPS.dll
+C:\Users\Stack\Desktop\result libs\NetGPS\obj\Debug\NetGPS.pdb
