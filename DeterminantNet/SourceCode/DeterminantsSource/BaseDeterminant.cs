@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Determinanters
 {
-    public abstract class BaseDeterminant<T>
+    public abstract class BaseDeterminant<T, Out>
     {
         private List<ISelectFilter<T>> filters;
         protected BaseDeterminant(params ISelectFilter<T>[] filters)
@@ -36,35 +36,36 @@ namespace Determinanters
             else throw new ArgumentException("Filter that you trying to remove didn't add to filters");
         }
 
-        public T CalculateArea(DepthFrame depthFrame, SelectArea selectArea)
+        //TODO: Check the bounds
+        public Out CalculateArea(IDepthMatrix<T> depthFrame, SelectArea selectArea)
         {
-            if (IsSelectAreaInFrameRange(depthFrame, selectArea))
-            {
+            //if (IsSelectAreaInFrameRange(depthFrame, selectArea))
+            //{
                 IEnumerable<T> source = GetSourceData(depthFrame, selectArea);
-                source = ApplyFilters(source, selectArea);
+                source = ApplyFilters(source);
                 return FinalCalculation(source);
-            }
-            else throw new OutOfBoundsException();
+            //}
+            //else throw new OutOfBoundsException();
 
         }
 
-        protected abstract IEnumerable<T> GetSourceData(DepthFrame frame, SelectArea selectArea);
-        protected abstract T FinalCalculation(IEnumerable<T> data);
+        protected abstract IEnumerable<T> GetSourceData(IDepthMatrix<T> frame, SelectArea area);
+        protected abstract Out FinalCalculation(IEnumerable<T> data);
 
-        private bool IsSelectAreaInFrameRange(VideoFrame frame, SelectArea selectArea)
+        private bool IsSelectAreaInFrameRange(IDepthMatrix<T> frame, SelectArea selectArea)
         {
             SelectArea frameArea = new SelectArea(frame.Width, frame.Height);
             return frameArea.ContainsOther(selectArea);
         }
 
-        private IEnumerable<T> ApplyFilters(IEnumerable<T> source, SelectArea selectArea)
+        private IEnumerable<T> ApplyFilters(IEnumerable<T> source)
         {
             try
             {
                 var current = source;
                 foreach (ISelectFilter<T> item in filters)
                 {
-                    current = item.Apply(current, selectArea);
+                    current = item.Apply(current);
                 }
                 return current;
             }

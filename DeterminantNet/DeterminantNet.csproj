@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SourceCode\BoundersSource\Bounders\DepthMapBounder.cs" />
-    <Compile Include="SourceCode\BoundersSource\Bounders\IDepthMatrix.cs" />
+    <Compile Include="SourceCode\DeterminantsSource\IDepthMatrix.cs" />
     <Compile Include="SourceCode\BoundersSource\Bounders\InsideBounder.cs" />
     <Compile Include="SourceCode\BoundersSource\Bounders\OutsideBounder.cs" />
     <Compile Include="SourceCode\BoundersSource\Recognizers\DimensionCalculator.cs" />
@@ -61,12 +61,12 @@
     <Compile Include="SourceCode\DeterminantsSource\ISelectFilter.cs" />
     <Compile Include="SourceCode\DeterminantsSource\Exceptions\OutOfBoundsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SourceCode\DeterminantsSource\PixelToVecto3Converter.cs" />
-    <Compile Include="SourceCode\DeterminantsSource\SelectArea.cs" />
-    <Compile Include="SourceCode\DeterminantsSource\SizeCalculator.cs" />
+    <Compile Include="SourceCode\DeterminantsSource\D-Cam classes\PixelToVecto3Converter.cs" />
+    <Compile Include="SourceCode\DeterminantsSource\SzieCulculator\SelectArea.cs" />
+    <Compile Include="SourceCode\DeterminantsSource\D-Cam classes\SizeCalculator.cs" />
+    <Compile Include="SourceCode\DeterminantsSource\SzieCulculator\Culculator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SourceCode\DeterminantsSource\DepthMapBounders\" />
     <Folder Include="SourceCode\DeterminantsSource\Filters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

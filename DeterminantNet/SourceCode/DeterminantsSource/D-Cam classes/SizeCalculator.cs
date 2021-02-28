@@ -15,7 +15,7 @@ namespace Determinanters
             this.converter = new PixelToVecto3Converter(intrinsics);
         }
 
-        public Size GetObjectSize(IDepthMatrix matrix, MatrixPoint[] dimension)
+        public Size GetObjectSize(IDepthMatrix<float> matrix, MatrixPoint[] dimension)
         {
             try
             {
@@ -33,9 +33,9 @@ namespace Determinanters
             }
         }
 
-        private float GetDepthFromMatrix(IDepthMatrix matrix, MatrixPoint point) 
+        private float GetDepthFromMatrix(IDepthMatrix<float> matrix, MatrixPoint point) 
         {
-            return matrix.GetDistance(point.row, point.column);
+            return matrix.GetMatrixValue(point.row, point.column);
         }
     }
 

@@ -1,0 +1,7 @@
+C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Release\DeterminantNet.dll
+C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Release\DeterminantNet.pdb
+C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Release\Intel.Realsense.dll
+C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Release\DeterminantNet.csproj.CoreCompileInputs.cache
+C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Release\DeterminantNet.csproj.CopyComplete
+C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Release\DeterminantNet.dll
+C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Release\DeterminantNet.pdb

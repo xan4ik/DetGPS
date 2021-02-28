@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DepthMapBounders
+namespace Determinanters
 {
-    public interface IDepthMatrix
+    public interface IDepthMatrix<T>
     {
-        float GetDistance(int i, int j);
+        T GetMatrixValue(int i, int j);
         int Width { get; }
         int Height { get; }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Determinanters;
+using System;
 using System.Collections.Generic;
 
 
@@ -9,6 +10,7 @@ namespace DepthMapBounders
         public const int ObjectPointFactor = 1;
         public const int ObjectBorderFactor = -1;
         public const int UndefinedPointFactor = 0;
+
         private float epsilon;
         private int minNeighborNUmber;
         protected int[,] boundMatrix;
@@ -33,7 +35,7 @@ namespace DepthMapBounders
             set => minNeighborNUmber = value;
         }
 
-        public BoundMatrix GetObjectBoundMatrix(IDepthMatrix depthMatrix, int startX, int startY)
+        public BoundMatrix GetObjectBoundMatrix(IDepthMatrix<float> depthMatrix, int startX, int startY)
         {
             CrateBoundMatrixFor(depthMatrix);
             InitializeQueue(startX, startY);
@@ -41,7 +43,7 @@ namespace DepthMapBounders
             return new BoundMatrix(boundMatrix);
         }
 
-        private void CrateBoundMatrixFor(IDepthMatrix depthMatrix)
+        private void CrateBoundMatrixFor(IDepthMatrix<float> depthMatrix)
         {
             boundMatrix = new int[depthMatrix.Width, depthMatrix.Height];
         }
@@ -53,7 +55,7 @@ namespace DepthMapBounders
         }
 
 
-        private void FillBoundMatrix(IDepthMatrix depthMatrix, int[,] bounds)
+        private void FillBoundMatrix(IDepthMatrix<float> depthMatrix, int[,] bounds)
         {
             while (!IsQueueEmpty())
             {
@@ -68,7 +70,7 @@ namespace DepthMapBounders
             }
         }
 
-        private void FlagCenterCell(IDepthMatrix arr, MatrixPoint currentPoint)
+        private void FlagCenterCell(IDepthMatrix<float> arr, MatrixPoint currentPoint)
         {
             var count = CountCellsInEpsilonCircle(arr, currentPoint.row, currentPoint.column);
             if (count >= minNeighborNUmber)
@@ -83,7 +85,7 @@ namespace DepthMapBounders
 
         protected abstract void AddNeighborCells(MatrixPoint point);
 
-        private int CountCellsInEpsilonCircle(IDepthMatrix depthMatrix, int row, int column)
+        private int CountCellsInEpsilonCircle(IDepthMatrix<float> depthMatrix, int row, int column)
         {
             int count = 0;
 
@@ -110,7 +112,7 @@ namespace DepthMapBounders
             return count;
         }
 
-        private bool IsCellInEpsilonCircle(IDepthMatrix depthMatrix, int row, int column, int neighborX, int neighborY)
+        private bool IsCellInEpsilonCircle(IDepthMatrix<float> depthMatrix, int row, int column, int neighborX, int neighborY)
         {
             if (!IsCellInArea(neighborX, neighborY))
             {
@@ -118,7 +120,7 @@ namespace DepthMapBounders
             }
             else
             {
-                return Math.Abs(Math.Abs(depthMatrix.GetDistance(row, column)) - Math.Abs(depthMatrix.GetDistance(neighborX, neighborY))) <= epsilon;
+                return Math.Abs(Math.Abs(depthMatrix.GetMatrixValue(row, column)) - Math.Abs(depthMatrix.GetMatrixValue(neighborX, neighborY))) <= epsilon;
             }
         }
 

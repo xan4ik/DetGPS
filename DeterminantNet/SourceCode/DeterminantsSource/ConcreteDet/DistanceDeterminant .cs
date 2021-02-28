@@ -6,18 +6,18 @@ using System.Text;
 
 namespace Determinanters
 {
-    public class DistanceDeterminant : BaseDeterminant<float>
+    public class DistanceDeterminant : BaseDeterminant<float, float>
     {
         public DistanceDeterminant(params ISelectFilter<float>[] filters) : base(filters)
         { }
 
-        protected override IEnumerable<float> GetSourceData(DepthFrame frame, SelectArea selectArea)
+        protected override IEnumerable<float> GetSourceData(IDepthMatrix<float> frame, SelectArea selectArea)
         {
             for (int i = selectArea.LocationX; i < selectArea.LocationX + selectArea.Width; i++)
             {
-                for (int j = selectArea.LocationY; j < selectArea.LocationY + selectArea.Heigh; j++)
+                for (int j = selectArea.LocationY; j < selectArea.LocationY + selectArea.Height; j++)
                 {
-                    yield return frame.GetDistance(i, j);
+                    yield return frame.GetMatrixValue(i, j);
                 }
             }
         }
@@ -26,5 +26,6 @@ namespace Determinanters
         {
             return data.Sum() / data.Count();
         }
+
     }
 }

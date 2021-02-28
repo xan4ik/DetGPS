@@ -36,7 +36,7 @@ namespace Determinanters
             }
         }
 
-        public int Heigh
+        public int Height
         {
             get
             {

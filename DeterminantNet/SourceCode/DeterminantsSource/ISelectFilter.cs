@@ -7,6 +7,6 @@ namespace Determinanters
 {
     public interface ISelectFilter<T>
     {
-        IEnumerable<T> Apply(IEnumerable<T> origin, SelectArea selectArea);
+        IEnumerable<T> Apply(IEnumerable<T> origin);
     }
 }
