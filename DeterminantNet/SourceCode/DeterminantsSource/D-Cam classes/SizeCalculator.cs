@@ -19,13 +19,39 @@ namespace Determinanters
         {
             try
             {
-                var minX = converter.ConverX(dimension[InternalDimensions.MinXIndex].row, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MinXIndex]));
-                var maxX = converter.ConverX(dimension[InternalDimensions.MaxXIndex].row, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MaxXIndex]));
+                var minX = dimension[InternalDimensions.MinXIndex];
+                var minXvector = converter.ConvertFrom(minX.row, minX.column, GetDepthFromMatrix(matrix, minX));
 
-                var minY = converter.ConverY(dimension[InternalDimensions.MinYIndex].column, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MinYIndex]));
-                var maxY = converter.ConverY(dimension[InternalDimensions.MaxYIndex].column, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MaxYIndex]));
+                var maxX = dimension[InternalDimensions.MaxXIndex];
+                var maxXvector = converter.ConvertFrom(maxX.row, maxX.column, GetDepthFromMatrix(matrix, maxX));
 
-                return new Size(Math.Abs(minX - maxX), Math.Abs(minY - maxY));
+                var minY = dimension[InternalDimensions.MinYIndex];
+                var minYvector = converter.ConvertFrom(minY.row, minY.column, GetDepthFromMatrix(matrix, minY));
+
+                var maxY = dimension[InternalDimensions.MaxYIndex];
+                var maxYvector = converter.ConvertFrom(maxY.row, maxY.column, GetDepthFromMatrix(matrix, maxY));
+
+
+                var width = Math.Sqrt(
+                        Math.Pow(minXvector.X - maxXvector.X, 2) +
+                        Math.Pow(minXvector.Y - maxXvector.Y, 2) +
+                        Math.Pow(minXvector.Z - maxXvector.Z, 2) 
+                    );
+
+
+                var height = Math.Sqrt(
+                        Math.Pow(minYvector.X - maxYvector.X, 2) +
+                        Math.Pow(minYvector.Y - maxYvector.Y, 2) +
+                        Math.Pow(minYvector.Z - maxYvector.Z, 2)     
+                    );
+                return new Size((float)width, (float)height);
+                //var minX = converter.ConverX(dimension[InternalDimensions.MinXIndex].row, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MinXIndex]));
+                //var maxX = converter.ConverX(dimension[InternalDimensions.MaxXIndex].row, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MaxXIndex]));
+
+                //var minY = converter.ConverY(dimension[InternalDimensions.MinYIndex].column, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MinYIndex]));
+                //var maxY = converter.ConverY(dimension[InternalDimensions.MaxYIndex].column, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MaxYIndex]));
+
+                //return new Size(Math.Abs(minX - maxX), Math.Abs(minY - maxY));
             }
             catch (Exception exc) 
             {
