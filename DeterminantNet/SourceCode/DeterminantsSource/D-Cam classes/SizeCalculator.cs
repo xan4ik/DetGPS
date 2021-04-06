@@ -34,15 +34,15 @@ namespace Determinanters
 
                 var width = Math.Sqrt(
                         Math.Pow(minXvector.X - maxXvector.X, 2) +
-                        Math.Pow(minXvector.Y - maxXvector.Y, 2) +
-                        Math.Pow(minXvector.Z - maxXvector.Z, 2) 
+                        Math.Pow(0, 2) + // minXvector.Y - maxXvector.Y
+                        Math.Pow(minXvector.Z - maxXvector.Z, 2)
                     );
 
 
                 var height = Math.Sqrt(
-                        Math.Pow(minYvector.X - maxYvector.X, 2) +
+                        Math.Pow(0, 2) + //minYvector.X - maxYvector.X
                         Math.Pow(minYvector.Y - maxYvector.Y, 2) +
-                        Math.Pow(minYvector.Z - maxYvector.Z, 2)     
+                        Math.Pow(minYvector.Z - maxYvector.Z, 2)
                     );
                 return new Size((float)width, (float)height);
                 //var minX = converter.ConverX(dimension[InternalDimensions.MinXIndex].row, GetDepthFromMatrix(matrix, dimension[InternalDimensions.MinXIndex]));

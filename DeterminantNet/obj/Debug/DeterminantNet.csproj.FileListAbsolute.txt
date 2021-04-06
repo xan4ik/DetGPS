@@ -8,7 +8,6 @@ C:\Users\Stack\source\repos\ConsoleApp4\DeterminantNet\obj\Debug\DeterminantNet.
 C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Debug\DeterminantNet.dll
 C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Debug\DeterminantNet.pdb
 C:\Users\Stack\Desktop\result libs\DeterminantNet\bin\Debug\Intel.Realsense.dll
-C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Debug\DeterminantNet.csprojAssemblyReference.cache
 C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Debug\DeterminantNet.csproj.CoreCompileInputs.cache
 C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Debug\DeterminantNet.csproj.CopyComplete
 C:\Users\Stack\Desktop\result libs\DeterminantNet\obj\Debug\DeterminantNet.dll
